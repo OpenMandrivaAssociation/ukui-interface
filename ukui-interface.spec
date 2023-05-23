@@ -12,6 +12,7 @@ URL:            https://github.com/ukui/ukui-interface
 Source:         https://github.com/ukui/ukui-interface/archive/v%{version}/%{name}-%{version}.tar.gz
 #Patch0:         fix-hardcode-path.patch
 BuildRequires:  fdupes
+BuildRequires:  qmake5
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gio-unix-2.0)
