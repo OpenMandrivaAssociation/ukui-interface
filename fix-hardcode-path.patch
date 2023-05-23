@@ -1,0 +1,23 @@
+diff -Nur ukui-interface-1.0.1/src/log4qt/ukui-log4qt.pro ukui-interface-1.0.1-new/src/log4qt/ukui-log4qt.pro
+--- ukui-interface-1.0.1/src/log4qt/ukui-log4qt.pro	2021-10-29 18:05:43.000000000 +0800
++++ ukui-interface-1.0.1-new/src/log4qt/ukui-log4qt.pro	2022-03-15 11:24:46.050886849 +0800
+@@ -1,5 +1,10 @@
+ QT -= gui
+ 
++isEmpty(LIB_INSTALL_DIR){
++    message("You Don't define LIB_INSTALL_DIR, the library(es) will be installed to /usr/lib by default")
++    LIB_INSTALL_DIR = /usr/lib
++}
++
+ TEMPLATE = lib
+ DEFINES += LIBUKUILOG4QT_LIBRARY UKUILOG4QT_EXTRA_ENABLE
+ 
+@@ -35,7 +40,7 @@
+ 
+ # Default rules for deployment.
+ unix {
+-    target.path = /usr/lib
++    target.path = $$LIB_INSTALL_DIR
+ }
+ !isEmpty(target.path): INSTALLS += target
+ 
