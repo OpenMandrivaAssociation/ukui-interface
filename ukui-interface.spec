@@ -188,6 +188,7 @@ popd
 %install
 %make_install
 pushd src/log4qt
+mkdir -p %{buildroot}%{_libdir}  
 %make_install
 popd
 
