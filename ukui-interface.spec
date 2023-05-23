@@ -1,3 +1,7 @@
+%define project      ukui
+%define sover        0
+%define log4qt_sover 1
+
 Name:           ukui-interface
 Version:        1.0.1
 Release:        1
@@ -6,16 +10,27 @@ License:        GPL-3.0+
 Group:          System/GUI/Other
 URL:            https://github.com/ukui/ukui-interface
 Source:         https://github.com/ukui/ukui-interface/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         fix-hardcode-path.patch
+#Patch0:         fix-hardcode-path.patch
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gio-unix-2.0)
 BuildRequires:  pkgconfig(Qt5Core)
+BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(Qt5Gui)
+BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(Qt5Network)
+BuildRequires:  pkgconfig(Qt5Widgets)
+BuildRequires:  pkgconfig(Qt5PrintSupport)
+BuildRequires:  pkgconfig(Qt5X11Extras)
+BuildRequires:  pkgconfig(Qt5Concurrent)
+BuildRequires:  pkgconfig(Qt5Multimedia)
+BuildRequires:  pkgconfig(Qt5Sql)
+BuildRequires:  pkgconfig(Qt5Svg)
+BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gsettings-qt)
-BuildRequires:  libiniparser-devel
-BuildRequires:  libqt5-qtbase-common-devel
+BuildRequires:  iniparser-devel
 BuildRequires:  mate-common
 BuildRequires:  intltool
 
@@ -165,14 +180,14 @@ NOCONFIGURE=0 ./autogen.sh
 %configure --enable-more-warnings
 %make_build
 pushd src/log4qt
-%qmake5 LIB_INSTALL_DIR=%{_libdir}
+%qmake_qt5 LIB_INSTALL_DIR=%{_libdir}
 %make_build
 popd
 
 %install
 %make_install
 pushd src/log4qt
-%qmake5_install
+%make_install
 popd
 
 rm -rf %{buildroot}%{_libdir}/*.la %{buildroot}%{_libdir}/*.a 
