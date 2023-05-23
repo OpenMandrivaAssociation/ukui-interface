@@ -10,7 +10,7 @@ License:        GPL-3.0+
 Group:          System/GUI/Other
 URL:            https://github.com/ukui/ukui-interface
 Source:         https://github.com/ukui/ukui-interface/archive/v%{version}/%{name}-%{version}.tar.gz
-#Patch0:         fix-hardcode-path.patch
+Patch0:         fix-hardcode-path.patch
 BuildRequires:  fdupes
 BuildRequires:  qmake5
 BuildRequires:  pkgconfig(glib-2.0)
