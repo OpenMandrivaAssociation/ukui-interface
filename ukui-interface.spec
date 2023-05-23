@@ -37,6 +37,7 @@ BuildRequires:  pkgconfig(gsettings-qt)
 BuildRequires:  iniparser-devel
 #BuildRequires:  mate-common
 BuildRequires:  intltool
+Requires:	%{libname} = %{version}-%{release}
 
 %description
 UKUI interface provides the interface for system configuration and related
@@ -45,6 +46,7 @@ libraries.
 %package -n %{libname}
 Summary:        Shared library for %{name}
 
+
 %description -n %{libname}
 UKUI interface provides the interface for system configuration and related libraries.
 
@@ -52,6 +54,7 @@ UKUI interface provides the interface for system configuration and related libra
 Summary:        Development tools for ukui-interface
 Group:          Development/Libraries/X11
 Requires:	%{libname} = %{version}-%{release}  
+Requires:	%{name} = %{version}-%{release}
 
 %description -n %{devname}
 The ukui-interface-devel package contains the header files for ukui-interface.
