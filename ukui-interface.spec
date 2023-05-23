@@ -189,7 +189,7 @@ popd
 %make_install
 pushd src/log4qt
 mkdir -p %{buildroot}%{_libdir}  
-%make_install
+%make_install INSTALL_ROOT=%{buildroot}
 popd
 
 rm -rf %{buildroot}%{_libdir}/*.la %{buildroot}%{_libdir}/*.a 
