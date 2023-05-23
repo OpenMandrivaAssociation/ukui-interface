@@ -35,7 +35,7 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(gsettings-qt)
 BuildRequires:  iniparser-devel
-BuildRequires:  mate-common
+#BuildRequires:  mate-common
 BuildRequires:  intltool
 
 %description
