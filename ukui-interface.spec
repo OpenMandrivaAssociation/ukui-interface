@@ -53,7 +53,8 @@ UKUI interface provides the interface for system configuration and related libra
 %package -n %{devname}
 Summary:        Development tools for ukui-interface
 Group:          Development/Libraries/X11
-Requires:	%{libname} = %{version}-%{release}  
+Provides:       ukui-interface-devel
+Requires:	%{libname} = %{version}-%{release}
 Requires:	%{name} = %{version}-%{release}
 
 %description -n %{devname}
